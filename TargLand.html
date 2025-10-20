@@ -35,18 +35,6 @@
 
         /* CONFIGURATION SECTION - EDIT THESE VALUES */
         :root {
-            /* Logo URL - Replace with your logo image URL (recommended size: 40px height) */
-            --logo-url: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" fill="%23cc0000"><path d="M13.1 6.5C12.9 6.7 11.8 7.4 11.8 9.1C11.8 11.1 13.2 11.8 13.3 11.8C13.3 11.9 13 12.9 12.3 14C11.7 14.9 11.1 15.8 10 15.8C9 15.8 8.6 15.2 7.5 15.2C6.4 15.2 5.9 15.8 5 15.8C4 15.8 3.4 14.9 2.7 13.9C1.9 12.7 1.2 10.8 1.2 9C1.2 6.6 2.7 5.3 4.3 5.3C5.3 5.3 6.2 6 6.8 6C7.4 6 8.4 5.3 9.6 5.3C10 5.3 11.5 5.3 12.5 6.5L13.1 6.5ZM9.6 3.4C10.1 2.8 10.5 2 10.4 1.2C9.7 1.2 8.8 1.7 8.3 2.3C7.8 2.8 7.4 3.6 7.5 4.4C8.3 4.5 9.1 4 9.6 3.4Z"/></svg>');
-
-            /* Header Button URLs - Replace with your redirect links */
-            --header-link-1: 'https://www.target.com';
-            --header-link-2: 'https://www.target.com';
-            --header-link-3: 'https://www.target.com';
-
-            /* Gift Card Image URL - Replace with your image URL */
-            /* Recommended dimensions: 600px width x 380px height (maintains 300x190 display ratio) */
-            --gift-card-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 190" fill="%23cc0000"><rect width="300" height="190" rx="16"/><circle cx="50" cy="50" r="30" fill="white" opacity="0.3"/><text x="260" y="170" font-family="Arial" font-size="32" font-weight="bold" fill="white" text-anchor="end">$1000</text></svg>');
-
             /* Main CTA URL - Replace with your main redirect link */
             --main-cta-url: 'https://t.afftrackr.com/?es4v=3Wiep5czUpRjNtFnhc3rmUGNb34UGIHlvQJDRoz7h5U%3d&s1=us';
         }
@@ -75,18 +63,14 @@
 
         .logo-link {
             display: block;
-            width: 40px;
             height: 40px;
             cursor: pointer;
         }
 
         .custom-logo {
-            width: 100%;
             height: 100%;
-            background-image: var(--logo-url);
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
+            width: auto;
+            object-fit: contain;
         }
 
         .header-icons {
@@ -221,9 +205,7 @@
             width: 300px;
             height: 190px;
             margin: 0 auto 20px;
-            background-image: var(--gift-card-image);
-            background-size: cover;
-            background-position: center;
+            background: #cc0000;
             border-radius: 16px;
             position: relative;
             box-shadow: 0 20px 40px rgba(204, 0, 0, 0.3);
@@ -231,6 +213,16 @@
             animation: float 3s ease-in-out infinite;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .gift-card-visual img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
         }
 
         .gift-card-visual:hover {
@@ -682,12 +674,12 @@
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <!-- Custom Logo - EDIT THE URL IN CSS :root SECTION -->
+            <!-- Custom Logo -->
             <a href="#" class="logo-link" id="logoLink">
-                <div class="custom-logo"></div>
+                <img src="images/targetlogo.png" alt="Target Logo" class="custom-logo">
             </a>
 
-            <!-- Right Icons - EDIT THE URLS IN CSS :root SECTION -->
+            <!-- Right Icons -->
             <div class="header-icons">
                 <!-- Search Icon -->
                 <a href="#" id="headerLink1">
@@ -719,10 +711,11 @@
             <h1>Get Your $1000<br>Target Gift Card</h1>
             <p class="subtitle">Complete 3 simple steps to claim your reward</p>
 
-            <!-- Gift Card Image - EDIT THE IMAGE URL IN CSS :root SECTION -->
-            <!-- Recommended dimensions: 600px width x 380px height -->
+            <!-- Gift Card Image -->
             <a href="#" class="gift-card-link" id="giftCardLink">
-                <div class="gift-card-visual"></div>
+                <div class="gift-card-visual">
+                    <img src="/target.png" alt="Target Gift Card">
+                </div>
             </a>
 
             <button class="learn-more-btn" onclick="scrollToSteps()">Learn More</button>
@@ -771,7 +764,7 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-container">
-            <!-- Main CTA Button - EDIT THE URL IN CSS :root SECTION -->
+            <!-- Main CTA Button -->
             <a href="#" class="cta-button" id="mainCtaButton">Claim Your Target Reward</a>
             <p class="cta-helper-text">No purchase necessary • 2 minutes to complete</p>
         </div>
