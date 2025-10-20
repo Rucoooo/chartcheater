@@ -70,11 +70,141 @@
             text-decoration: none;
         }
 
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            padding: 80px 0 20px;
+            text-align: center;
+        }
+
+        .logo-section .logo {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 20px 20px 40px;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(180deg, #FFE5E5 0%, #ffffff 100%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #CC0000;
+        }
+
+        .subtitle {
+            font-size: 21px;
+            color: #86868b;
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .gift-card-visual {
+            width: 300px;
+            height: 190px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #CC0000 0%, #FF0000 100%);
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(204, 0, 0, 0.3);
+            transform: perspective(1000px) rotateY(-5deg);
+            animation: float 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .gift-card-visual:hover {
+            transform: perspective(1000px) rotateY(-5deg) scale(1.05);
+            box-shadow: 0 25px 50px rgba(204, 0, 0, 0.35);
+        }
+
+        .gift-card-link {
+            text-decoration: none;
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: perspective(1000px) rotateY(-5deg) translateY(0); }
+            50% { transform: perspective(1000px) rotateY(-5deg) translateY(-10px); }
+        }
+
+        .gift-card-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .gift-card-amount {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .learn-more-btn {
+            background: #CC0000;
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 24px;
+            font-size: 17px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 20px;
+            font-family: inherit;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .learn-more-btn:hover {
+            background: #DD0000;
+            transform: scale(1.02);
+        }
+
+        .learn-more-btn:active {
+            transform: scale(0.98);
+        }
 
         /* Steps Section */
         .steps-container {
-            padding: 80px 20px 15px;
+            padding: 20px 20px 15px;
             background: #f5f5f7;
+            margin-top: -20px;
             position: relative;
         }
 
@@ -478,6 +608,11 @@
                 font-size: 13px;
             }
 
+            .gift-card-visual {
+                width: 260px;
+                height: 165px;
+                margin-bottom: 20px;
+            }
 
             .cta-button {
                 width: 100%;
@@ -519,41 +654,25 @@
             }
         }
 
+        .hero-content > * {
+            animation: fadeIn 0.8s ease forwards;
+            animation-fill-mode: both;
+        }
+
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
     <!-- Notification Container -->
     <div id="notification-container"></div>
 
-    <!-- Header -->
-    <header class="header">
-        <div class="header-content">
-            <a href="https://www.target.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/target.png" alt="Target Logo" class="header-logo" id="logo">
-            </a>
-
-            <div class="header-icons">
-                <a href="https://www.target.com" target="_blank" rel="noopener noreferrer">
-                    <svg class="header-icon" viewBox="0 0 18 18" fill="currentColor">
-                        <path d="M17.5 16.4l-4.8-4.8c1-1.2 1.5-2.7 1.5-4.3 0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7c1.6 0 3.1-.5 4.3-1.5l4.8 4.8c.2.2.4.3.6.3s.4-.1.6-.3c.3-.3.3-.8 0-1.2zM1.7 7.2c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5-5.5-2.5-5.5-5.5z"/>
-                    </svg>
-                </a>
-
-                <a href="https://www.target.com" target="_blank" rel="noopener noreferrer">
-                    <svg class="header-icon" viewBox="0 0 18 18" fill="currentColor">
-                        <path d="M13.5 5h-1c0-1.9-1.6-3.5-3.5-3.5S5.5 3.1 5.5 5h-1C3.7 5 3 5.7 3 6.5v8c0 .8.7 1.5 1.5 1.5h9c.8 0 1.5-.7 1.5-1.5v-8c0-.8-.7-1.5-1.5-1.5zM9 2.5c1.4 0 2.5 1.1 2.5 2.5h-5c0-1.4 1.1-2.5 2.5-2.5zm4.5 12c0 .3-.2.5-.5.5H5c-.3 0-.5-.2-.5-.5v-8c0-.3.2-.5.5-.5h.5v1.5c0 .3.2.5.5.5s.5-.2.5-.5V6h5v1.5c0 .3.2.5.5.5s.5-.2.5-.5V6h.5c.3 0 .5.2.5.5v8z"/>
-                    </svg>
-                </a>
-
-                <a href="https://www.target.com" target="_blank" rel="noopener noreferrer">
-                    <svg class="header-icon" viewBox="0 0 18 18" fill="currentColor">
-                        <path d="M2 4.5h14c.3 0 .5-.2.5-.5s-.2-.5-.5-.5H2c-.3 0-.5.2-.5.5s.2.5.5.5zm0 5h14c.3 0 .5-.2.5-.5s-.2-.5-.5-.5H2c-.3 0-.5.2-.5.5s.2.5.5.5zm0 5h14c.3 0 .5-.2.5-.5s-.2-.5-.5-.5H2c-.3 0-.5.2-.5.5s.2.5.5.5z"/>
-                    </svg>
-                </a>
-            </div>
+    <!-- Logo Section -->
+    <div class="container">
+        <div class="logo-section">
+            <img src="images/targetlogo.png" alt="Target Logo" class="logo">
         </div>
-    </header>
-
 
     <!-- Steps Section -->
     <section class="steps-container">
@@ -707,6 +826,17 @@
     </footer>
 
     <script>
+        // Configuration - Change logo and amount here
+        const CONFIG = {
+            logoUrl: 'images/targetlogo.png',  // Change this path to your logo image
+            amount: '$1000'  // Change this to your desired amount
+        };
+
+        // Apply configuration
+        document.getElementById('logo').src = CONFIG.logoUrl;
+        document.getElementById('cardLogo').src = CONFIG.logoUrl;
+        document.getElementById('amount').textContent = CONFIG.amount;
+        document.getElementById('cardAmount').textContent = CONFIG.amount;
 
         // Notifications
         const notifications = [
@@ -775,6 +905,20 @@
             setInterval(showNotification, 20000 + Math.random() * 10000);
         }, 8000);
 
+        // Scroll to steps function
+        function scrollToSteps() {
+            const stepsSection = document.querySelector('.steps-container');
+            const ctaButton = document.querySelector('.cta-button');
+            if (stepsSection && ctaButton) {
+                const ctaRect = ctaButton.getBoundingClientRect();
+                const ctaBottom = ctaRect.bottom + window.pageYOffset;
+                const targetScroll = ctaBottom - window.innerHeight + 50;
+                window.scrollTo({
+                    top: targetScroll,
+                    behavior: 'smooth'
+                });
+            }
+        }
     </script>
 </body>
 </html>
