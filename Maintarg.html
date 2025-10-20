@@ -4,20 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Target Gift Card - Get Your $1000 Reward</title>
-
-    <!-- TikTok Pixel Code Start -->
-    <script>
-    !function (w, d, t) {
-      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-  var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-  ;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-      ttq.load('D3Q0HCRC77UD1HDJ9EKG');
-      ttq.page();
-    }(window, document, 'ttq');
-    </script>
-    <!-- TikTok Pixel Code End -->
-
     <style>
         * {
             margin: 0;
@@ -55,16 +41,10 @@
             align-items: center;
         }
 
-        .logo-link {
-            display: block;
-            height: 40px;
-            cursor: pointer;
-        }
-
-        .custom-logo {
-            height: 100%;
+        .header-logo {
+            height: 32px;
             width: auto;
-            object-fit: contain;
+            cursor: pointer;
         }
 
         .header-icons {
@@ -76,10 +56,14 @@
         .header-icon {
             width: 16px;
             height: 16px;
-            color: #cc0000;
+            color: #CC0000;
             cursor: pointer;
             opacity: 0.8;
             transition: opacity 0.2s;
+        }
+
+        .header-icon:hover {
+            opacity: 1;
         }
 
         .header-icons a {
@@ -91,7 +75,7 @@
             padding: 80px 20px 40px;
             text-align: center;
             position: relative;
-            background: linear-gradient(180deg, #f5f5f7 0%, #ffffff 100%);
+            background: linear-gradient(180deg, #FFE5E5 0%, #ffffff 100%);
         }
 
         .hero-content {
@@ -106,7 +90,7 @@
             font-weight: 600;
             line-height: 1.1;
             margin-bottom: 20px;
-            color: #1d1d1f;
+            color: #CC0000;
         }
 
         .subtitle {
@@ -116,6 +100,147 @@
             font-weight: 400;
         }
 
+        .gift-card-visual {
+            width: 300px;
+            height: 190px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #CC0000 0%, #FF0000 100%);
+            border-radius: 16px;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(204, 0, 0, 0.3);
+            transform: perspective(1000px) rotateY(-5deg);
+            animation: float 3s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .gift-card-visual:hover {
+            transform: perspective(1000px) rotateY(-5deg) scale(1.05);
+            box-shadow: 0 25px 50px rgba(204, 0, 0, 0.35);
+        }
+
+        .gift-card-link {
+            text-decoration: none;
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: perspective(1000px) rotateY(-5deg) translateY(0); }
+            50% { transform: perspective(1000px) rotateY(-5deg) translateY(-10px); }
+        }
+
+        .gift-card-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            filter: brightness(0) invert(1);
+        }
+
+        .gift-card-amount {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: white;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .learn-more-btn {
+            background: #CC0000;
+            border: none;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 24px;
+            font-size: 17px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 20px;
+            font-family: inherit;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .learn-more-btn:hover {
+            background: #DD0000;
+            transform: scale(1.02);
+        }
+
+        .learn-more-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Steps Section */
+        .steps-container {
+            padding: 20px 20px 15px;
+            background: #f5f5f7;
+            margin-top: -20px;
+            position: relative;
+        }
+
+        .steps-grid {
+            max-width: 980px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 20px 16px;
+            background: white;
+            border-radius: 18px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .step-icon-wrapper {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-icon {
+            width: 100%;
+            height: 100%;
+        }
+
+        .step-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .step-title .highlight {
+            color: #CC0000;
+        }
+
+        .step-description {
+            font-size: 13px;
+            color: #86868b;
+            line-height: 1.3;
+        }
 
         /* CTA Section */
         .cta-section {
@@ -131,7 +256,7 @@
 
         .cta-button {
             display: block;
-            background: #cc0000;
+            background: #CC0000;
             color: white;
             padding: 18px 32px;
             border-radius: 12px;
@@ -159,7 +284,7 @@
         }
 
         .cta-button:hover {
-            background: #ff0000;
+            background: #DD0000;
             transform: scale(1.02);
             box-shadow: 0 8px 24px rgba(204, 0, 0, 0.3);
         }
@@ -178,7 +303,7 @@
             color: #86868b;
         }
 
-        /* Reviews - Apple Style */
+        /* Reviews */
         .reviews {
             padding: 60px 20px;
             background: white;
@@ -236,7 +361,7 @@
         .star {
             width: 23px;
             height: 23px;
-            background: #cc0000;
+            background: #CC0000;
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
         }
 
@@ -293,7 +418,7 @@
         .review-star {
             width: 15px;
             height: 15px;
-            background: #cc0000;
+            background: #CC0000;
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
         }
 
@@ -320,7 +445,7 @@
         }
 
         .helpful-button {
-            color: #cc0000;
+            color: #CC0000;
             text-decoration: none;
             font-size: 15px;
         }
@@ -351,10 +476,10 @@
         }
 
         .footer-link:hover {
-            color: #cc0000;
+            color: #CC0000;
         }
 
-        /* iOS-style Notifications */
+        /* Notifications */
         .notification {
             position: fixed;
             top: -100px;
@@ -382,7 +507,7 @@
         .notification-icon {
             width: 38px;
             height: 38px;
-            background: linear-gradient(135deg, #cc0000 0%, #ff0000 100%);
+            background: linear-gradient(135deg, #CC0000 0%, #FF0000 100%);
             border-radius: 8.5px;
             display: flex;
             align-items: center;
@@ -445,6 +570,29 @@
                 font-size: 18px;
             }
 
+            .steps-grid {
+                gap: 20px;
+            }
+
+            .step-icon-wrapper {
+                width: 36px;
+                height: 36px;
+                margin-bottom: 10px;
+            }
+
+            .step-title {
+                font-size: 16px;
+            }
+
+            .step-description {
+                font-size: 13px;
+            }
+
+            .gift-card-visual {
+                width: 260px;
+                height: 165px;
+                margin-bottom: 20px;
+            }
 
             .cta-button {
                 width: 100%;
@@ -497,32 +645,30 @@
     </style>
 </head>
 <body>
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
     <!-- Header -->
     <header class="header">
         <div class="header-content">
-            <!-- Custom Logo -->
-            <a href="#" class="logo-link" id="logoLink">
-                <img src="images/targetlogo.png" alt="Target Logo" class="custom-logo" onerror="this.style.display='none'">
+            <a href="https://www.target.com" target="_blank" rel="noopener noreferrer">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADSUlEQVR4nO2dS2sUQRSFv4mJGnwQNYqKD0R8gKDgQkFBBMGFCxf+BH+Bv8CFuHDlwp0bxYWCCxUXLhQRRBBUFBVFjaCiRo0v1PiIGjPSTAiB6Zru6q6+t+r0gQPJpGfmnO5bVV3VXQMOh8PhcDgcDofD4XA4HA5HTWwEvgKzDUZjd8F7D/AJ+NMQFLsL3jvI+9Mgb+wuMD4CX4q+LrWqbwLvG4Ji90D5CTwFlud9XWpV3wI8AH42BMXuvvIT+An8AtYB9+p+fWpVn2s0BcTuwfKjsD5rNAXE7sHyo7Q+a9wBPG/sC8TuwfJD83rb+qzRDvzuYN+T3Z0r5t39+16RX8OGiP1lUKqtzxqnges1xnhyFu7LT4Djwva6+uwvV4Bc4POBo9KG2uh/BVjSxtgSnAdeFfh3AXcD+1cW1mfNT+BixdglcDHwn5FVH/6yf+oBx1WsLz5Qr1TUZ83PSn0n0Q08jmj7NOO+3YqxnwK7K/aNwJ6I9k8D1pfvS57U9KPD/oO8nfz5mI9fXwQ6K/bdUen3IHD+uA7sKex7DswAb0vmj29G1Ied9WPwFei2JmP4V9VSoD8mvgc4HHN+L3AIWBoT74to/zjHfGn0pJ31g3gObLQmY/ifVUt37nrge0z/M2Vj/wD2B+cvi+n/DPimZH6z8+Cx+u4B84BfCfvdBl6WjL0e6N+RsP8D4L31OXDc7fvI/PgU+B0EX5TMfb9mjH+xdwm3/4sK/gng0xBOdROBH8ACRDgATAeB+j+KScpxoL+a/j1E4BQwFQTq/ygm6FwCXyfodxGYP4o+Af2BJ8DHDvw/wSRdBtoO/6dpBH5cBR5F9Hmso84+DWPfpj7p+lETPeB2xIx8bE3G0Pg+/a81GUNj+3Qt8vfn6b0mYxidyxW/oA38r35kfvxL8LPrTeAfD4+dn0wO/Asrvn8Yf7eNfs9Sd9o9AevHk5f8n/oauFDR/pL5/5OJ/W9U9HHN/PjoNuuKpL7MzpXU/+T/pM/7Pzfi74ezQkfW0L/c2hPu25jrWm0O/6v77/NaWhgcfP9/Ao+sCXE4HA6Hw+FwOBwOhwMASwY/Aev0qlzg/wVzAAAAAElFTkSuQmCC" alt="Target Logo" class="header-logo" id="logo">
             </a>
 
-            <!-- Right Icons -->
             <div class="header-icons">
-                <!-- Search Icon -->
-                <a href="#" id="headerLink1">
+                <a href="https://www.target.com" target="_blank" rel="noopener noreferrer">
                     <svg class="header-icon" viewBox="0 0 18 18" fill="currentColor">
                         <path d="M17.5 16.4l-4.8-4.8c1-1.2 1.5-2.7 1.5-4.3 0-3.9-3.1-7-7-7s-7 3.1-7 7 3.1 7 7 7c1.6 0 3.1-.5 4.3-1.5l4.8 4.8c.2.2.4.3.6.3s.4-.1.6-.3c.3-.3.3-.8 0-1.2zM1.7 7.2c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5-5.5-2.5-5.5-5.5z"/>
                     </svg>
                 </a>
 
-                <!-- Shopping Bag Icon -->
-                <a href="#" id="headerLink2">
+                <a href="https://www.target.com" target="_blank" rel="noopener noreferrer">
                     <svg class="header-icon" viewBox="0 0 18 18" fill="currentColor">
                         <path d="M13.5 5h-1c0-1.9-1.6-3.5-3.5-3.5S5.5 3.1 5.5 5h-1C3.7 5 3 5.7 3 6.5v8c0 .8.7 1.5 1.5 1.5h9c.8 0 1.5-.7 1.5-1.5v-8c0-.8-.7-1.5-1.5-1.5zM9 2.5c1.4 0 2.5 1.1 2.5 2.5h-5c0-1.4 1.1-2.5 2.5-2.5zm4.5 12c0 .3-.2.5-.5.5H5c-.3 0-.5-.2-.5-.5v-8c0-.3.2-.5.5-.5h.5v1.5c0 .3.2.5.5.5s.5-.2.5-.5V6h5v1.5c0 .3.2.5.5.5s.5-.2.5-.5V6h.5c.3 0 .5.2.5.5v8z"/>
                     </svg>
                 </a>
 
-                <!-- Menu Icon -->
-                <a href="#" id="headerLink3">
+                <a href="https://www.target.com" target="_blank" rel="noopener noreferrer">
                     <svg class="header-icon" viewBox="0 0 18 18" fill="currentColor">
                         <path d="M2 4.5h14c.3 0 .5-.2.5-.5s-.2-.5-.5-.5H2c-.3 0-.5.2-.5.5s.2.5.5.5zm0 5h14c.3 0 .5-.2.5-.5s-.2-.5-.5-.5H2c-.3 0-.5.2-.5.5s.2.5.5.5zm0 5h14c.3 0 .5-.2.5-.5s-.2-.5-.5-.5H2c-.3 0-.5.2-.5.5s.2.5.5.5z"/>
                     </svg>
@@ -534,16 +680,63 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Get Your $1000<br>Target Gift Card</h1>
+            <h1>Get Your <span id="amount">$1000</span><br />Target Gift Card</h1>
             <p class="subtitle">Complete 3 simple steps to claim your reward</p>
+
+            <a href="https://t.afftrackr.com/?es4v=3Wiep5czUpRjNtFnhc3rmUGNb34UGIHlvQJDRoz7h5U%3d&s1=us" class="gift-card-link">
+                <div class="gift-card-visual">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADSUlEQVR4nO2dS2sUQRSFv4mJGnwQNYqKD0R8gKDgQkFBBMGFCxf+BH+Bv8CFuHDlwp0bxYWCCxUXLhQRRBBUFBVFjaCiRo0v1PiIGjPSTAiB6Zru6q6+t+r0gQPJpGfmnO5bVV3VXQMOh8PhcDgcDofD4XA4HA5HTWwEvgKzDUZjd8F7D/AJ+NMQFLsL3jvI+9Mgb+wuMD4CX4q+LrWqbwLvG4Ji90D5CTwFlud9XWpV3wI8AH42BMXuvvIT+An8AtYB9+p+fWpVn2s0BcTuwfKjsD5rNAXE7sHyo7Q+a9wBPG/sC8TuwfJD83rb+qzRDvzuYN+T3Z0r5t39+16RX8OGiP1lUKqtzxqnges1xnhyFu7LT4Djwva6+uwvV4Bc4POBo9KG2uh/BVjSxtgSnAdeFfh3AXcD+1cW1mfNT+BixdglcDHwn5FVH/6yf+oBx1WsLz5Qr1TUZ83PSn0n0Q08jmj7NOO+3YqxnwK7K/aNwJ6I9k8D1pfvS57U9KPD/oO8nfz5mI9fXwQ6K/bdUen3IHD+uA7sKex7DswAb0vmj29G1Ied9WPwFei2JmP4V9VSoD8mvgc4HHN+L3AIWBoT74to/zjHfGn0pJ31g3gObLQmY/ifVUt37nrge0z/M2Vj/wD2B+cvi+n/DPimZH6z8+Cx+u4B84BfCfvdBl6WjL0e6N+RsP8D4L31OXDc7fvI/PgU+B0EX5TMfb9mjH+xdwm3/4sK/gng0xBOdROBH8ACRDgATAeB+j+KScpxoL+a/j1E4BQwFQTq/ygm6FwCXyfodxGYP4o+Af2BJ8DHDvw/wSRdBtoO/6dpBH5cBR5F9Hmso84+DWPfpj7p+lETPeB2xIx8bE3G0Pg+/a81GUNj+3Qt8vfn6b0mYxidyxW/oA38r35kfvxL8LPrTeAfD4+dn0wO/Asrvn8Yf7eNfs9Sd9o9AevHk5f8n/oauFDR/pL5/5OJ/W9U9HHN/PjoNuuKpL7MzpXU/+T/pM/7Pzfi74ezQkfW0L/c2hPu25jrWm0O/6v77/NaWhgcfP9/Ao+sCXE4HA6Hw+FwOBwOhwMASwY/Aev0qlzg/wVzAAAAAElFTkSuQmCC" alt="Gift Card" class="gift-card-logo" id="cardLogo">
+                    <div class="gift-card-amount" id="cardAmount">$1000</div>
+                </div>
+            </a>
+
+            <button class="learn-more-btn" onclick="scrollToSteps()">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps-container">
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-icon-wrapper">
+                    <svg class="step-icon" viewBox="0 0 56 56" fill="none">
+                        <circle cx="28" cy="28" r="28" fill="#FFE5E5"/>
+                        <path d="M28 18C25.2 18 23 20.2 23 23C23 25.8 25.2 28 28 28C30.8 28 33 25.8 33 23C33 20.2 30.8 18 28 18ZM28 26C26.3 26 25 24.7 25 23C25 21.3 26.3 20 28 20C29.7 20 31 21.3 31 23C31 24.7 29.7 26 28 26ZM36 38V36C36 32.7 33.3 30 30 30H26C22.7 30 20 32.7 20 36V38H22V36C22 33.8 23.8 32 26 32H30C32.2 32 34 33.8 34 36V38H36Z" fill="#CC0000"/>
+                    </svg>
+                </div>
+                <h3 class="step-title">Enter your <span class="highlight">basic info.</span></h3>
+                <p class="step-description">Quick registration with just your name and email address</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-icon-wrapper">
+                    <svg class="step-icon" viewBox="0 0 56 56" fill="none">
+                        <circle cx="28" cy="28" r="28" fill="#FFE5E5"/>
+                        <path d="M34 20H22C20.9 20 20 20.9 20 22V34C20 35.1 20.9 36 22 36H34C35.1 36 36 35.1 36 34V22C36 20.9 35.1 20 34 20ZM34 34H22V22H34V34ZM24 26.5C24 26.2 24.2 26 24.5 26H31.5C31.8 26 32 26.2 32 26.5S31.8 27 31.5 27H24.5C24.2 27 24 26.8 24 26.5ZM24 29.5C24 29.2 24.2 29 24.5 29H31.5C31.8 29 32 29.2 32 29.5S31.8 30 31.5 30H24.5C24.2 30 24 29.8 24 29.5ZM24 32.5C24 32.2 24.2 32 24.5 32H28.5C28.8 32 29 32.2 29 32.5S28.8 33 28.5 33H24.5C24.2 33 24 32.8 24 32.5Z" fill="#CC0000"/>
+                    </svg>
+                </div>
+                <h3 class="step-title">Complete a <span class="highlight">quick survey.</span></h3>
+                <p class="step-description">Answer a few questions about your shopping preferences</p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-icon-wrapper">
+                    <svg class="step-icon" viewBox="0 0 56 56" fill="none">
+                        <circle cx="28" cy="28" r="28" fill="#FFE5E5"/>
+                        <path d="M35.5 24.5L26.5 33.5L20.5 27.5L22 26L26.5 30.5L34 23L35.5 24.5Z" fill="#CC0000"/>
+                        <path d="M28 18C22.5 18 18 22.5 18 28C18 33.5 22.5 38 28 38C33.5 38 38 33.5 38 28C38 22.5 33.5 18 28 18ZM28 36C23.6 36 20 32.4 20 28C20 23.6 23.6 20 28 20C32.4 20 36 23.6 36 28C36 32.4 32.4 36 28 36Z" fill="#CC0000"/>
+                    </svg>
+                </div>
+                <h3 class="step-title">Select <span class="highlight">partner deals.</span></h3>
+                <p class="step-description">Choose from recommended offers to maximize your reward</p>
+            </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-container">
-            <!-- Main CTA Button -->
-            <a href="#" class="cta-button" id="mainCtaButton">Claim Your Target Reward</a>
+            <a href="https://t.afftrackr.com/?es4v=3Wiep5czUpRjNtFnhc3rmUGNb34UGIHlvQJDRoz7h5U%3d&s1=us" class="cta-button">Claim Your Target Reward</a>
             <p class="cta-helper-text">No purchase necessary • 2 minutes to complete</p>
         </div>
     </section>
@@ -647,43 +840,25 @@
     <footer class="footer">
         <div class="footer-content">
             <a href="https://www.target.com/c/terms-conditions/-/N-4sr7l" class="footer-link" target="_blank" rel="noopener noreferrer">Terms of Use</a>
-            <a href="https://www.target.com/c/target-privacy-policy/-/N-4sr9z" class="footer-link" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+            <a href="https://www.target.com/c/target-privacy-policy/-/N-4sr84" class="footer-link" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
             <a href="https://www.target.com/" class="footer-link" target="_blank" rel="noopener noreferrer">Target.com</a>
         </div>
     </footer>
 
-    <!-- Notification Container -->
-    <div id="notification-container"></div>
-
     <script>
-        // ============================================
-        // CONFIGURATION SECTION - EDIT THESE VALUES
-        // ============================================
+        // Configuration - Change logo and amount here
+        const CONFIG = {
+            logoUrl: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADSUlEQVR4nO2dS2sUQRSFv4mJGnwQNYqKD0R8gKDgQkFBBMGFCxf+BH+Bv8CFuHDlwp0bxYWCCxUXLhQRRBBUFBVFjaCiRo0v1PiIGjPSTAiB6Zru6q6+t+r0gQPJpGfmnO5bVV3VXQMOh8PhcDgcDofD4XA4HA5HTWwEvgKzDUZjd8F7D/AJ+NMQFLsL3jvI+9Mgb+wuMD4CX4q+LrWqbwLvG4Ji90D5CTwFlud9XWpV3wI8AH42BMXuvvIT+An8AtYB9+p+fWpVn2s0BcTuwfKjsD5rNAXE7sHyo7Q+a9wBPG/sC8TuwfJD83rb+qzRDvzuYN+T3Z0r5t39+16RX8OGiP1lUKqtzxqnges1xnhyFu7LT4Djwva6+uwvV4Bc4POBo9KG2uh/BVjSxtgSnAdeFfh3AXcD+1cW1mfNT+BixdglcDHwn5FVH/6yf+oBx1WsLz5Qr1TUZ83PSn0n0Q08jmj7NOO+3YqxnwK7K/aNwJ6I9k8D1pfvS57U9KPD/oO8nfz5mI9fXwQ6K/bdUen3IHD+uA7sKex7DswAb0vmj29G1Yed9WPwFei2JmP4V9VSoD8mvgc4HHN+L3AIWBoT74to/zjHfGn0pJ31g3gObLQmY/ifVUt37nrge0z/M2Vj/wD2B+cvi+n/DPimZH6z8+Cx+u4B84BfCfvdBl6WjL0e6N+RsP8D4L31OXDc7fvI/PgU+B0EX5TMfb9mjH+xdwm3/4sK/gng0xBOdROBH8ACRDgATAeB+j+KScpxoL+a/j1E4BQwFQTq/ygm6FwCXyfodxGYP4o+Af2BJ8DHDvw/wSRdBtoO/6dpBH5cBR5F9Hmso84+DWPfpj7p+lETPeB2xIx8bE3G0Pg+/a81GUNj+3Qt8vfn6b0mYxidyxW/oA38r35kfvxL8LPrTeAfD4+dn0wO/Asrvn8Yf7eNfs9Sd9o9AevHk5f8n/oauFDR/pL5/5OJ/W9U9HHN/PjoNuuKpL7MzpXU/+T/pM/7Pzfi74ezQkfW0L/c2hPu25jrWm0O/6v77/NaWhgcfP9/Ao+sCXE4HA6Hw+FwOBwOhwMASwY/Aev0qlzg/wVzAAAAAElFTkSuQmCC',
+            amount: '$1000'
+        };
 
-        // Logo and Header Links
-        const LOGO_REDIRECT_URL = 'https://www.target.com';
-        const HEADER_LINK_1_URL = 'https://www.target.com';
-        const HEADER_LINK_2_URL = 'https://www.target.com';
-        const HEADER_LINK_3_URL = 'https://www.target.com';
+        // Apply configuration
+        document.getElementById('logo').src = CONFIG.logoUrl;
+        document.getElementById('cardLogo').src = CONFIG.logoUrl;
+        document.getElementById('amount').textContent = CONFIG.amount;
+        document.getElementById('cardAmount').textContent = CONFIG.amount;
 
-        // Main CTA URL
-        const MAIN_CTA_URL = 'https://t.afftrackr.com/?es4v=3Wiep5czUpRjNtFnhc3rmUGNb34UGIHlvQJDRoz7h5U%3d&s1=us';
-
-        // ============================================
-        // APPLY CONFIGURATION TO LINKS
-        // ============================================
-
-        document.getElementById('logoLink').href = LOGO_REDIRECT_URL;
-        document.getElementById('headerLink1').href = HEADER_LINK_1_URL;
-        document.getElementById('headerLink2').href = HEADER_LINK_2_URL;
-        document.getElementById('headerLink3').href = HEADER_LINK_3_URL;
-        document.getElementById('mainCtaButton').href = MAIN_CTA_URL;
-
-        // ============================================
-        // FUNCTIONALITY (DO NOT EDIT BELOW)
-        // ============================================
-
-        // iOS-style notifications
+        // Notifications
         const notifications = [
             {
                 appName: 'Gift Cards',
@@ -721,8 +896,7 @@
             notifEl.innerHTML = `
                 <div class="notification-icon">
                     <svg viewBox="0 0 24 24" fill="currentColor">
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M16 8l-6 6-3-3" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="10" />
                     </svg>
                 </div>
                 <div class="notification-content">
@@ -745,10 +919,26 @@
             }, 6000);
         }
 
+        // Start showing notifications
         setTimeout(() => {
             showNotification();
             setInterval(showNotification, 20000 + Math.random() * 10000);
         }, 8000);
+
+        // Scroll to steps function
+        function scrollToSteps() {
+            const stepsSection = document.querySelector('.steps-container');
+            const ctaButton = document.querySelector('.cta-button');
+            if (stepsSection && ctaButton) {
+                const ctaRect = ctaButton.getBoundingClientRect();
+                const ctaBottom = ctaRect.bottom + window.pageYOffset;
+                const targetScroll = ctaBottom - window.innerHeight + 50;
+                window.scrollTo({
+                    top: targetScroll,
+                    behavior: 'smooth'
+                });
+            }
+        }
     </script>
 </body>
 </html>
