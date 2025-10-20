@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Target Gift Card - Get Your $750 Reward</title>
+    <title>Target Gift Card - Get Your $1000 Reward</title>
     <style>
         * {
             margin: 0;
@@ -27,7 +27,7 @@
             top: 0;
             left: 0;
             right: 0;
-            z-index: 750;
+            z-index: 1000;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
@@ -70,9 +70,29 @@
             text-decoration: none;
         }
 
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Logo Section */
+        .logo-section {
+            padding: 80px 0 20px;
+            text-align: center;
+        }
+
+        .logo-section .logo {
+            max-width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
         /* Hero Section */
         .hero {
-            padding: 80px 20px 40px;
+            padding: 20px 20px 40px;
             text-align: center;
             position: relative;
             background: linear-gradient(180deg, #FFE5E5 0%, #ffffff 100%);
@@ -108,7 +128,7 @@
             border-radius: 16px;
             position: relative;
             box-shadow: 0 20px 40px rgba(204, 0, 0, 0.3);
-            transform: perspective(750px) rotateY(-5deg);
+            transform: perspective(1000px) rotateY(-5deg);
             animation: float 3s ease-in-out infinite;
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -119,7 +139,7 @@
         }
 
         .gift-card-visual:hover {
-            transform: perspective(750px) rotateY(-5deg) scale(1.05);
+            transform: perspective(1000px) rotateY(-5deg) scale(1.05);
             box-shadow: 0 25px 50px rgba(204, 0, 0, 0.35);
         }
 
@@ -131,8 +151,8 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: perspective(750px) rotateY(-5deg) translateY(0); }
-            50% { transform: perspective(750px) rotateY(-5deg) translateY(-10px); }
+            0%, 100% { transform: perspective(1000px) rotateY(-5deg) translateY(0); }
+            50% { transform: perspective(1000px) rotateY(-5deg) translateY(-10px); }
         }
 
         .gift-card-logo {
@@ -652,7 +672,7 @@
     <header class="header">
         <div class="header-content">
             <a href="https://www.target.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/targetlogo.png" alt="Target Logo" class="header-logo" id="logo">
+                <img src="images/target.png" alt="Target Logo" class="header-logo" id="logo">
             </a>
 
             <div class="header-icons">
@@ -677,22 +697,29 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Get Your <span id="amount">$750</span><br />Target Gift Card</h1>
-            <p class="subtitle">Complete 3 simple steps to claim your reward</p>
-
-            <a href="https://t.afftrackr.com/?es4v=3Wiep5czUpRjNtFnhc3rmUGNb34UGIHlvQJDRoz7h5U%3d&s1=us" class="gift-card-link">
-                <div class="gift-card-visual">
-                    <img src="images/targetlogo.png" alt="Gift Card" class="gift-card-logo" id="cardLogo">
-                    <div class="gift-card-amount" id="cardAmount">$750</div>
-                </div>
-            </a>
-
-            <button class="learn-more-btn" onclick="scrollToSteps()">Learn More</button>
+    <!-- Logo Section -->
+    <div class="container">
+        <div class="logo-section">
+            <img src="images/targetlogo.png" alt="Target Logo" class="logo">
         </div>
-    </section>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Get Your <span id="amount">$1000</span><br />Target Gift Card</h1>
+                <p class="subtitle">Complete 3 simple steps to claim your reward</p>
+
+                <a href="https://t.afftrackr.com/?es4v=3Wiep5czUpRjNtFnhc3rmUGNb34UGIHlvQJDRoz7h5U%3d&s1=us" class="gift-card-link">
+                    <div class="gift-card-visual">
+                        <img src="images/targetlogo.png" alt="Gift Card" class="gift-card-logo" id="cardLogo">
+                        <div class="gift-card-amount" id="cardAmount">$1000</div>
+                    </div>
+                </a>
+
+                <button class="learn-more-btn" onclick="scrollToSteps()">Learn More</button>
+            </div>
+        </section>
+    </div>
 
     <!-- Steps Section -->
     <section class="steps-container">
@@ -802,7 +829,7 @@
                         <div class="review-star"></div>
                     </div>
                     <div class="review-title">Legitimate offer</div>
-                    <div class="review-text">Followed all the steps and got my $750 Target gift card as promised. The partner deals were actually useful services I was interested in anyway. Great experience overall.</div>
+                    <div class="review-text">Followed all the steps and got my $1000 Target gift card as promised. The partner deals were actually useful services I was interested in anyway. Great experience overall.</div>
                     <div class="review-helpful">
                         Helpful?
                         <a href="#" class="helpful-button">Yes</a>
@@ -848,8 +875,8 @@
     <script>
         // Configuration - Change logo and amount here
         const CONFIG = {
-            logoUrl: 'images/target.png',  // Change this path to your logo image
-            amount: '$750'  // Change this to your desired amount
+            logoUrl: 'images/targetlogo.png',  // Change this path to your logo image
+            amount: '$1000'  // Change this to your desired amount
         };
 
         // Apply configuration
@@ -863,7 +890,7 @@
             {
                 appName: 'Gift Cards',
                 title: 'New Reward Claimed',
-                body: 'Jennifer M. just received her $750 Target gift card'
+                body: 'Jennifer M. just received her $1000 Target gift card'
             },
             {
                 appName: 'Gift Cards',
@@ -922,7 +949,7 @@
         // Start showing notifications
         setTimeout(() => {
             showNotification();
-            setInterval(showNotification, 20000 + Math.random() * 7500);
+            setInterval(showNotification, 20000 + Math.random() * 10000);
         }, 8000);
 
         // Scroll to steps function
