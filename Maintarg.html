@@ -70,29 +70,9 @@
             text-decoration: none;
         }
 
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Logo Section */
-        .logo-section {
-            padding: 80px 0 20px;
-            text-align: center;
-        }
-
-        .logo-section .logo {
-            max-width: 150px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
         /* Hero Section */
         .hero {
-            padding: 20px 20px 40px;
+            padding: 80px 20px 40px;
             text-align: center;
             position: relative;
             background: linear-gradient(180deg, #FFE5E5 0%, #ffffff 100%);
@@ -697,29 +677,22 @@
         </div>
     </header>
 
-    <!-- Logo Section -->
-    <div class="container">
-        <div class="logo-section">
-            <img src="images/targetlogo.png" alt="Target Logo" class="logo">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Get Your <span id="amount">$1000</span><br />Target Gift Card</h1>
+            <p class="subtitle">Complete 3 simple steps to claim your reward</p>
+
+            <a href="https://t.afftrackr.com/?es4v=3Wiep5czUpRjNtFnhc3rmUGNb34UGIHlvQJDRoz7h5U%3d&s1=us" class="gift-card-link">
+                <div class="gift-card-visual">
+                    <img src="images/target.png" alt="Gift Card" class="gift-card-logo" id="cardLogo">
+                    <div class="gift-card-amount" id="cardAmount">$1000</div>
+                </div>
+            </a>
+
+            <button class="learn-more-btn" onclick="scrollToSteps()">Learn More</button>
         </div>
-
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Get Your <span id="amount">$1000</span><br />Target Gift Card</h1>
-                <p class="subtitle">Complete 3 simple steps to claim your reward</p>
-
-                <a href="https://t.afftrackr.com/?es4v=3Wiep5czUpRjNtFnhc3rmUGNb34UGIHlvQJDRoz7h5U%3d&s1=us" class="gift-card-link">
-                    <div class="gift-card-visual">
-                        <img src="images/targetlogo.png" alt="Gift Card" class="gift-card-logo" id="cardLogo">
-                        <div class="gift-card-amount" id="cardAmount">$1000</div>
-                    </div>
-                </a>
-
-                <button class="learn-more-btn" onclick="scrollToSteps()">Learn More</button>
-            </div>
-        </section>
-    </div>
+    </section>
 
     <!-- Steps Section -->
     <section class="steps-container">
@@ -875,7 +848,7 @@
     <script>
         // Configuration - Change logo and amount here
         const CONFIG = {
-            logoUrl: 'images/targetlogo.png',  // Change this path to your logo image
+            logoUrl: 'images/target.png',  // Change this path to your logo image
             amount: '$1000'  // Change this to your desired amount
         };
 
