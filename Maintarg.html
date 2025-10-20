@@ -70,121 +70,11 @@
             text-decoration: none;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 80px 20px 40px;
-            text-align: center;
-            position: relative;
-            background: linear-gradient(180deg, #FFE5E5 0%, #ffffff 100%);
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        h1 {
-            font-size: 48px;
-            font-weight: 600;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            color: #CC0000;
-        }
-
-        .subtitle {
-            font-size: 21px;
-            color: #86868b;
-            margin-bottom: 40px;
-            font-weight: 400;
-        }
-
-        .gift-card-visual {
-            width: 300px;
-            height: 190px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #CC0000 0%, #FF0000 100%);
-            border-radius: 16px;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(204, 0, 0, 0.3);
-            transform: perspective(1000px) rotateY(-5deg);
-            animation: float 3s ease-in-out infinite;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .gift-card-visual:hover {
-            transform: perspective(1000px) rotateY(-5deg) scale(1.05);
-            box-shadow: 0 25px 50px rgba(204, 0, 0, 0.35);
-        }
-
-        .gift-card-link {
-            text-decoration: none;
-            display: block;
-            width: fit-content;
-            margin: 0 auto;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: perspective(1000px) rotateY(-5deg) translateY(0); }
-            50% { transform: perspective(1000px) rotateY(-5deg) translateY(-10px); }
-        }
-
-        .gift-card-logo {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            filter: brightness(0) invert(1);
-        }
-
-        .gift-card-amount {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            color: white;
-            font-size: 32px;
-            font-weight: 600;
-        }
-
-        .learn-more-btn {
-            background: #CC0000;
-            border: none;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 24px;
-            font-size: 17px;
-            font-weight: 400;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-top: 20px;
-            font-family: inherit;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .learn-more-btn:hover {
-            background: #DD0000;
-            transform: scale(1.02);
-        }
-
-        .learn-more-btn:active {
-            transform: scale(0.98);
-        }
 
         /* Steps Section */
         .steps-container {
-            padding: 20px 20px 15px;
+            padding: 80px 20px 15px;
             background: #f5f5f7;
-            margin-top: -20px;
             position: relative;
         }
 
@@ -588,11 +478,6 @@
                 font-size: 13px;
             }
 
-            .gift-card-visual {
-                width: 260px;
-                height: 165px;
-                margin-bottom: 20px;
-            }
 
             .cta-button {
                 width: 100%;
@@ -634,14 +519,6 @@
             }
         }
 
-        .hero-content > * {
-            animation: fadeIn 0.8s ease forwards;
-            animation-fill-mode: both;
-        }
-
-        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
-        .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
-        .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
     </style>
 </head>
 <body>
@@ -677,22 +554,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Get Your <span id="amount">$1000</span><br />Target Gift Card</h1>
-            <p class="subtitle">Complete 3 simple steps to claim your reward</p>
-
-            <a href="https://t.afftrackr.com/?es4v=3Wiep5czUpRjNtFnhc3rmUGNb34UGIHlvQJDRoz7h5U%3d&s1=us" class="gift-card-link">
-                <div class="gift-card-visual">
-                    <img src="images/target.png" alt="Gift Card" class="gift-card-logo" id="cardLogo">
-                    <div class="gift-card-amount" id="cardAmount">$1000</div>
-                </div>
-            </a>
-
-            <button class="learn-more-btn" onclick="scrollToSteps()">Learn More</button>
-        </div>
-    </section>
 
     <!-- Steps Section -->
     <section class="steps-container">
@@ -846,17 +707,6 @@
     </footer>
 
     <script>
-        // Configuration - Change logo and amount here
-        const CONFIG = {
-            logoUrl: 'images/target.png',  // Change this path to your logo image
-            amount: '$1000'  // Change this to your desired amount
-        };
-
-        // Apply configuration
-        document.getElementById('logo').src = CONFIG.logoUrl;
-        document.getElementById('cardLogo').src = CONFIG.logoUrl;
-        document.getElementById('amount').textContent = CONFIG.amount;
-        document.getElementById('cardAmount').textContent = CONFIG.amount;
 
         // Notifications
         const notifications = [
@@ -925,20 +775,6 @@
             setInterval(showNotification, 20000 + Math.random() * 10000);
         }, 8000);
 
-        // Scroll to steps function
-        function scrollToSteps() {
-            const stepsSection = document.querySelector('.steps-container');
-            const ctaButton = document.querySelector('.cta-button');
-            if (stepsSection && ctaButton) {
-                const ctaRect = ctaButton.getBoundingClientRect();
-                const ctaBottom = ctaRect.bottom + window.pageYOffset;
-                const targetScroll = ctaBottom - window.innerHeight + 50;
-                window.scrollTo({
-                    top: targetScroll,
-                    behavior: 'smooth'
-                });
-            }
-        }
     </script>
 </body>
 </html>
