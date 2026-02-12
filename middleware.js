@@ -1,3 +1,4 @@
+<script src="/devtools-blocker.js"></script>
 /**
  * Desktop Traffic Blocker - Vercel Edge Middleware
  * 
